@@ -180,3 +180,209 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
+////
+/
+/
+//
+/
+v2
+/
+/
+v2
+/
+//
+/
+v2
+/
+/
+/
+/
+/
+/
+/
+/
+/<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+/* Basic Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.services-container {
+    display: flex;
+    flex-direction: column; /* Stack containers vertically on mobile */
+    padding: 20px;
+}
+
+.services {
+    width: 100%; /* Take full width on mobile */
+    margin-bottom: 20px; /* Space between items */
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.service-item:hover .arrow-icon {
+    opacity: 1;
+}
+
+.arrow-icon {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.service-details {
+    width: 100%; /* Take full width on mobile */
+}
+
+.service-detail {
+    opacity: 0; /* Initially hide with opacity */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.service-detail.show {
+    opacity: 1; /* Show element with opacity */
+    max-height: 500px; /* Adjust this value to fit your content height */
+}
+
+.service-detail img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.service-detail h2 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.service-detail p {
+    margin-bottom: 10px;
+}
+
+.service-detail button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.service-detail button:hover {
+    background-color: #0056b3;
+}
+
+</style>
+</head>
+<body>
+
+
+<div class="services-container">
+    <!-- Left Side: Service Items -->
+    <div class="services">
+        <div class="service-item" data-target="service1">
+            <h3>Service 1</h3>
+            <span class="arrow-icon">&rarr;</span>
+        </div>
+        <div class="service-item" data-target="service2">
+            <h3>Service 2</h3>
+            <span class="arrow-icon">&rarr;</span>
+        </div>
+        <div class="service-item" data-target="service3">
+            <h3>Service 3</h3>
+            <span class="arrow-icon">&rarr;</span>
+        </div>
+        <div class="service-item" data-target="service4">
+            <h3>Service 4</h3>
+            <span class="arrow-icon">&rarr;</span>
+        </div>
+        <div class="service-item" data-target="service5">
+            <h3>Service 5</h3>
+            <span class="arrow-icon">&rarr;</span>
+        </div>
+        <div class="service-item" data-target="service6">
+            <h3>Service 6</h3>
+            <span class="arrow-icon">&rarr;</span>
+        </div>
+    </div>
+
+    <!-- Right Side: Service Details -->
+    <div class="service-details">
+        <div class="service-detail" id="service1">
+            <img src="service1.jpg" alt="Service 1">
+            <h2>Service 1 Title</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero et efficitur faucibus.</p>
+            <button>Learn More</button>
+        </div>
+        <div class="service-detail" id="service2">
+            <img src="service2.jpg" alt="Service 2">
+            <h2>Service 2 Title</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero et efficitur faucibus.</p>
+            <button>Learn More</button>
+        </div>
+        <div class="service-detail" id="service3">
+            <img src="service3.jpg" alt="Service 3">
+            <h2>Service 3 Title</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero et efficitur faucibus.</p>
+            <button>Learn More</button>
+        </div>
+        <div class="service-detail" id="service4">
+            <img src="service4.jpg" alt="Service 4">
+            <h2>Service 4 Title</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero et efficitur faucibus.</p>
+            <button>Learn More</button>
+        </div>
+        <div class="service-detail" id="service5">
+            <img src="service5.jpg" alt="Service 5">
+            <h2>Service 5 Title</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero et efficitur faucibus.</p>
+            <button>Learn More</button>
+        </div>
+        <div class="service-detail" id="service6">
+            <img src="service6.jpg" alt="Service 6">
+            <h2>Service 6 Title</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero et efficitur faucibus.</p>
+            <button>Learn More</button>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const serviceItems = document.querySelectorAll('.service-item');
+    const serviceDetails = document.querySelectorAll('.service-detail');
+
+    // Add click event listener to each service item
+    serviceItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-target');
+
+            // Toggle accordion effect
+            serviceDetails.forEach(detail => {
+                if (detail.id === targetId) {
+                    detail.classList.toggle('show');
+                } else {
+                    detail.classList.remove('show');
+                }
+            });
+        });
+    });
+});
+
+</script>
+</html>
